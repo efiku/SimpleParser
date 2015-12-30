@@ -1,0 +1,7 @@
+sudo: false
+language: php
+php:
+  - 7.0
+install: composer install
+script:
+ - bin/phpunit tests/* --bootstrap vendor/autoload.php --color=always
