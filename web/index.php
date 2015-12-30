@@ -5,8 +5,7 @@ use efiku\SimpleParser;
 
 $polishWords = new SimpleParser('./1.txt');
 $englishWords = new SimpleParser('./2.txt');
-
-$arrayOfWords = [];
+$arrayOfWords = new ArrayObject();
 
 foreach ($polishWords as $word) {
     if (!$polishWords->isEmptyLine()) {
@@ -19,4 +18,8 @@ foreach ($englishWords as $word) {
     }
 }
 
-var_dump($arrayOfWords);
+foreach ($arrayOfWords as $words) {
+    echo $words[0]  . " == ". $words[1] . PHP_EOL;
+
+}
+

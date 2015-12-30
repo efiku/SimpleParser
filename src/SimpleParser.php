@@ -12,20 +12,8 @@ use efiku\SimpleParser\Exception\FileNotFound;
 
 class SimpleParser implements \Iterator
 {
-    /**
-     * Resource file pointer
-     * @var Resource
-     */
     private $filePointer;
-    /**
-     * Represents current element in iteration
-     * @var array
-     */
     private $currentElement;
-    /**
-     * Cumulative row count of file
-     * @var int
-     */
     private $rowCounter;
 
 
