@@ -1,5 +1,5 @@
 Śmieszna mała aplikacja :)
 
-[![Build Status](https://travis-ci.com/efiku/SimpleParser.svg?token=xCpwqAxDjMzyxjCPykfo&branch=master)](https://travis-ci.com/efiku/SimpleParser)
+[![Build Status](https://travis-ci.org/efiku/SimpleParser.svg?branch=master)](https://travis-ci.org/efiku/SimpleParser)
 
 License: MIT
