@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: efik
- * Date: 30.12.15
- * Time: 21:33
- */
 
-namespace efiku\SimpleParser\Exception;
+namespace SimpleParser\Exception;
 
 use Exception;
 

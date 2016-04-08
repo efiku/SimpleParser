@@ -1,14 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: efik
- * Date: 30.12.15
- * Time: 21:22
- */
+namespace SimpleParser;
 
-namespace efiku;
-
-use efiku\SimpleParser\Exception\FileNotFound;
+use SimpleParser\Exception\FileNotFound;
 
 class SimpleParser implements \Iterator
 {
@@ -16,16 +9,15 @@ class SimpleParser implements \Iterator
     private $currentElement;
     private $rowCounter;
 
-
-    public function __construct(string $fileName)
+    public function __construct($fileName)
     {
         if (!file_exists($fileName)) {
             throw new FileNotFound();
         }
-        $this->filePointer = fopen($fileName, "r");
+        $this->filePointer = fopen($fileName, 'r');
     }
 
-    public function current(): string
+    public function current()
     {
         $this->currentElement = trim(fgets($this->filePointer));
 
@@ -37,17 +29,19 @@ class SimpleParser implements \Iterator
         ++$this->rowCounter;
     }
 
-    public function key() : int
+    public function key()
     {
         return $this->rowCounter;
     }
 
-    public function valid() : bool
+    public function valid()
     {
         if (feof($this->filePointer)) {
             fclose($this->filePointer);
+
             return false;
         }
+
         return true;
     }
 
@@ -58,8 +52,8 @@ class SimpleParser implements \Iterator
         rewind($this->filePointer);
     }
 
-    public function isEmptyLine() : bool
+    public function isEmptyLine()
     {
-        return ($this->currentElement === "");
+        return $this->currentElement === '';
     }
 }
